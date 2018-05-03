@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container>ul{
+			display: inline-grid;
+			grid-template-columns: 100px 20px 100px 10px 100px;
+			grid-template-rows:auto 20px auto;
+		}
+		li{list-style: none}
+		.box{
+			background-color: #444;
+			color:#fff;
+			font-size: 150%;
+			line-height: 60px;
+			text-align: center;
+		}
+		.b,.d,.f,.g,.h,.i,.j,.l,.n{
+            background-color: #1D8FEE;
+        }
+	</style>
+</head>
+<body>
+	<!-- <div class="container">
+		<ul>
+			<li class="box a">A</li> 
+		    <li class="box b"></li> 
+		    <li class="box c">C</li> 
+		    <li class="box d"></li> 
+		    <li class="box e">E</li> 
+		    <li class="box f"></li> 
+		    <li class="box g"></li> 
+		    <li class="box h"></li> 
+		    <li class="box i"></li> 
+		    <li class="box j"></li> 
+		    <li class="box k">K</li> 
+		    <li class="box l"></li> 
+		    <li class="box m">M</li> 
+		    <li class="box n"></li> 
+		    <li class="box o">O</li> 
+		</ul>
+	</div> -->
+	<style>
+		body{
+			display: grid;
+			grid-template-rows:100px repeat(2,100px) 100px;
+			grid-row-gap:20px;
+			grid-row-start: 3;
+			grid-row-end: 3;
+		}
+		header{
+			background-color: red;
+		}
+		footer{
+			background-color: blue;
+		}
+		main{
+			background-color: pink;
+		}
+	</style>
+	<header>
+		
+	</header>
+	<main>
+		
+	</main>
+	<footer>
+		
+	</footer>
+</body>
+</html>
