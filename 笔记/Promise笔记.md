@@ -29,3 +29,20 @@ fulfilled[实现]操作成功
 rejected[被否决]操作失败
 Promise状态发生改变，就会触发.then()里的响应函数处理后续步骤。
 Promise状态一经改变，不会再改变
+.then()
+.then()接受两个函数作为参数，分别代表fulfiled和rejected
+.then()返回一个新的Promise实例，所以他可以链式调用
+当前面的Promise状态改变时，.then()根据其最终状态，选择特定的状态相应函数执行。
+状态相应函数可以返回新的Promise,或其它值
+如果返回新的Promise,那么下一级.then()会在新Promise状态改变之后执行
+如果其他任何值，则会立刻执行下一级.then()
+.then()里有.then()的情况
+因为.then()返回的还是Promise实例。
+会等里面的.then()执行完，在执行外面的。
+对于我们来说，此时最好将其展开，会更好读。
+错误处理
+Promise会自动捕获内部异常，并交给rejected响应函数处理。
+错误处理的两种方法：
+1.reject("错误信息").then(null,message=>{})
+2.throw new Error('错误信息').catch(message=>{})
+推荐使用第二种，更加清晰好读，并且可以捕获前面的错误。
